@@ -1,12 +1,12 @@
 Package.describe({
   summary: "A package that provides a blog at /blog",
-  version: "0.8.6",
+  version: "0.8.7",
   name: "ryw:blog",
   git: "https://github.com/meteor-blog/meteor-blog.git"
 });
 
 Package.onUse(function(api) {
-  api.versionsFrom('METEOR@1.2');
+  api.versionsFrom(["1.2", "2.3.5"]);
 
   var both = ['client', 'server'];
 
@@ -17,12 +17,12 @@ Package.onUse(function(api) {
     'coffeescript',
     'accounts-base',
     'iron:url@1.0.9',
-    'kaptron:minimongoid@0.9.1',
+    'kaptron:minimongoid@0.9.9',
     'momentjs:moment@2.10.6',
-    'alanning:roles@1.2.13',
-    'meteorhacks:fast-render@2.10.0',
+    'alanning:roles@3.4.0',
+    'communitypackages:fast-render',
     'meteorhacks:subs-manager@1.6.2',
-    'cfs:standard-packages@0.5.9',
+    'cfs:standard-packages@0.5.11',
     'cfs:gridfs@0.0.33',
     'cfs:s3@0.1.3'
   ], both);
@@ -46,9 +46,9 @@ Package.onUse(function(api) {
     'templating',
     'tracker',
     'reactive-var',
-    'less',
+    'less@4.0.0',
     'aslagle:reactive-table@0.5.5',
-    'liberation:shareit@1.0.1',
+    'liberation:shareit@1.1.3',
     'flawless:meteor-toastr@1.0.1'
   ], 'client');
 
