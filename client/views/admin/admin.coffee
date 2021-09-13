@@ -68,9 +68,15 @@ Template.blogAdminVisibleColumn.events
     e.preventDefault()
     mode = e.currentTarget.value
     publishedAt = if mode is 'draft' then null else new Date()
-    @update
-      mode: mode
-      publishedAt: publishedAt
+
+    post = Blog.Post.first(@id)
+    if post?
+      post.update
+        mode: mode
+        publishedAt: publishedAt
+    else
+      throw new Error "Post not found"
+
 
 Template.blogAdminDeleteColumn.events
   'click [data-action=delete]': (e, tpl) ->
